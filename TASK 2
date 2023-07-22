@@ -1,0 +1,652 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tribute Page - Task 2</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+   
+<style>
+/* Import Font from Google */
+@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Helvetica, "Libre Franklin", sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 5rem;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 10px;
+  font-family: "Libre Franklin", sans-serif;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#scroll-down {
+  font-family: "Libre Franklin", sans-serif;
+  font-size: 2rem;
+  position: absolute;
+  bottom: 10px;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+  animation: upDown 1000ms linear infinite;
+}
+
+.up-down {
+  display: flex;
+  flex-direction: row;
+  gap: 1.2rem;
+  animation: upDown 1000ms linear infinite;
+  position: absolute;
+  bottom: 2rem;
+  left: 10px;
+}
+.up-down i {
+  color: #000;
+}
+
+@keyframes upDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+/* Common CSS */
+.container {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.bg-dark {
+  color: #fff;
+  background-color: #000;
+}
+
+.bg-light {
+  color: #000;
+  background-color: #fff;
+}
+
+.tribute-badge {
+  align-self: flex-start;
+  letter-spacing: 10px;
+  font-family: "Libre Franklin", sans-serif;
+}
+
+.banner {
+  background-image: url(https://imagensemoldes.com.br/wp-content/uploads/2020/10/Nikola-Tesla-PNG-791x1024.png);
+  background-position: right 4rem;
+  background-size: 50%;
+  background-repeat: no-repeat;
+  filter: saturate(0.5);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.quote {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.quote div {
+  flex: 1;
+}
+.quote .img-div {
+  text-align: right;
+  overflow: hidden;
+  border-radius: 2rem;
+}
+
+.hidden {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 2rem;
+  }
+  .quote {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  .quote div {
+    flex: auto;
+    text-align: center;
+  }
+}
+.biography {
+  height: auto;
+  padding: 3rem 2rem;
+}
+.biography .bio {
+  margin-bottom: 8rem;
+}
+.biography .bio h4 {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  margin-top: 2rem;
+  color: aquamarine;
+}
+.biography .bio p {
+  font-size: 1rem;
+}
+.biography h3 {
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  margin-bottom: 10px;
+}
+.biography p {
+  text-align: justify;
+  letter-spacing: 2px;
+}
+.biography span {
+  color: aquamarine;
+  font-weight: bold;
+}
+.biography .up-down i {
+  color: white;
+}
+
+#fourth-page {
+  max-width: 900px;
+  padding: 3rem 2rem;
+  height: auto;
+}
+#fourth-page .container {
+  padding: 2rem;
+}
+#fourth-page h3 {
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  margin-bottom: 10px;
+}
+#fourth-page h3 span {
+  color: rgb(0, 204, 255);
+}
+#fourth-page p {
+  text-align: justify;
+  letter-spacing: 2px;
+}
+#fourth-page span {
+  font-weight: bold;
+}
+#fourth-page .up-down {
+  left: -8.5vw;
+}
+#fourth-page .up-down i {
+  color: rgb(0, 0, 0);
+}
+#fourth-page ul {
+  position: relative;
+}
+#fourth-page li {
+  position: relative;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(45, 45, 43, 0.15);
+  margin-bottom: 40px;
+}
+#fourth-page .circle {
+  display: block;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgb(0, 204, 255);
+}
+#fourth-page .line {
+  position: absolute;
+  left: -20px;
+  top: 5rem;
+  transform: translateY(40px);
+  width: 2px;
+  height: 89%;
+  background: rgb(0, 204, 255);
+}
+#fourth-page .inv-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+#fourth-page .description {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-top: 10px;
+  letter-spacing: normal;
+}
+
+.pQuote {
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
+}
+.pQuote span {
+  color: rgb(0, 204, 255);
+  text-align: right;
+  display: block;
+  font-size: 0.8rem;
+}
+
+@media (max-width: 976px) {
+  #fourth-page .up-down {
+    left: 1rem !important;
+  }
+  .banner {
+    background-position: right 5rem;
+    background-size: 100%;
+  }
+  .banner::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+  }
+}
+@media (max-width: 668px) {
+  .line {
+    height: 90%;
+    top: 6.5rem !important;
+  }
+}
+@media (max-width: 550px) {
+  .line {
+    height: 90%;
+  }
+  .banner {
+    background-position: right 10rem;
+  }
+}
+@media (max-width: 450px) {
+  .banner {
+    background-position: right bottom;
+  }
+  .line {
+    top: 10rem !important;
+    height: 89% !important;
+  }
+}/*# sourceMappingURL=style.css.map */</style>
+</head>
+
+<body>
+
+    <section class="bg-dark " id="front-page">
+        <div class="container banner">
+            <div>
+                <span class="tribute-badge">Tribute to</span>
+                <h1>Nikola Tesla</h1>
+            </div>
+            <a id="scroll-down" href="#second-page"><i class="fa fa-arrow-down" aria-hidden="true"></i></a>
+        </div>
+    </section>
+
+    <section class="bg-light " id="second-page">
+        <div class="container">
+            <div class="quote">
+                <div>
+                    <span class="tribute-badge">Quote</span>
+                    <h2>“If you want to find the secrets of the universe, think in terms of energy, frequency and
+                        vibration.”</h2>
+                </div>
+                <div class="img-div">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Nikola_Tesla_Colored.png/459px-Nikola_Tesla_Colored.png?20130331231908"
+                        alt="">
+                </div>
+            </div>
+            <div class="up-down">
+                <div>
+                    <a class="scroll-down" href="#front-page"><i class="fa fa-arrow-up" aria-hidden="true"></i></a>
+                </div>
+                <div>
+                    <a class="scroll-down" href="#third-page"><i class="fa fa-arrow-down" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-dark ">
+        <div class="container biography" id="third-page">
+            <h3>Biography</h3>
+            <p><span>N</span>ikola Tesla, (born July 9/10, 1856, Smiljan, Austrian Empire [now in Croatia]—died January
+                7, 1943, New York, New York, U.S.), Serbian American inventor and engineer who discovered and patented
+                the rotating magnetic field, the basis of most alternating-current machinery. He also developed the
+                three-phase system of electric power transmission. He immigrated to the United States in 1884 and sold
+                the patent rights to his system of alternating-current dynamos, transformers, and motors to George
+                Westinghouse. In 1891 he invented the Tesla coil, an induction coil widely used in radio technology.</p>
+
+                <div class="bio">
+                    <div>
+                        <h4>Early Life</h4>
+                        <p>Famous Serbian-American inventor Nikola Tesla was born on July 10, 1856, in what is now Smiljan, Croatia. Tesla's interest in electrical invention was likely spurred by his mother, Djuka Mandic, who invented small household appliances in her spare time while her son was growing up. Tesla's father, Milutin Tesla, was a priest. After studying in the 1870s at the Realschule, Karlstadt (later renamed the Johann-Rudolph-Glauber Realschule Karlstadt); the Polytechnic Institute in Graz, Austria; and the University of Prague, Tesla began preparing for a trip to America.</p>
+                    </div>
+                    <div>
+                        <h4>Famed Inventor</h4>
+                        <p>Tesla came to the United States in 1884, and soon began working with famed inventor and business mogul Thomas Edison. The two worked together for a brief period before parting ways due to a conflicting business-scientific relationship, attributed by historians to their incredibly different personalities: While Edison was a power figure who focused on marketing and financial success, Tesla was a commercially out-of-tune and somewhat vulnerable, yet extremely pivotal inventor, who pioneered some of history's most important inventions. His inventions include the "Tesla coil," developed in 1891, and an alternating-current electrical system of generators, motors and transformers—both of which are still used widely today.</p>
+                    </div>
+                    <div>
+                        <h4>Death and Legacy</h4>
+                        <p>Poor and reclusive, Nikola Tesla died on January 7, 1943, at the age of 86, in New York City—where he had lived for nearly 60 years. His legacy, however, has been thriving for more than a century, and will undoubtedly live on for decades to come.</p>
+                        <p>Several books and films have highlighted Tesla's life and famous works, including Nikola Tesla, The Genius Who Lit the World, a film created by the Tesla Memorial Society and the Nikola Tesla Museum in Belgrade, Serbia; and The Secret of Nikola Tesla, which stars Orson Welles as John Pierpont Morgan (J.P. Morgan). In recent years, a street sign entitled "Nikola Tesla Corner" was installed in honor of the famous inventor, near the 40th Street-6th Avenue intersection in New York City.</p>
+                    </div>
+                </div>
+            <div class="up-down">
+                <div>
+                    <a class="scroll-down" href="#second-page"><i class="fa fa-arrow-up" aria-hidden="true"></i></a>
+                </div>
+                <div>
+                    <a class="scroll-down" href="#fourth-page"><i class="fa fa-arrow-down" aria-hidden="true"></i></a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="container" id="fourth-page">
+        <div>
+            <h3><span>Greatest</span> invention</h3>
+        </div>
+        <div class="invention">
+            <div>
+
+
+                <ul>
+                    <span class="line"></span>
+                    <li class="kartra_timeline__item">
+                        <span class="circle"></span>
+                        <div>
+                            <div data-component="text">
+                                <div>
+                                    <span style="font-size: 0.75rem;"><span>1899</span>
+                                </div>
+                            </div>
+                            <div>
+                                <div>
+                                    <div>
+                                        <p class="inv-title">Tesla coil</p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div>
+                                        <p class="description">The system consists of two parts – a primary and
+                                            secondary coil, both of which have their own capacitator (which stores
+                                            electrical energy, like a battery). The primary coil is hooked up to a
+                                            power source from which it receives a massive charge, to the point that
+                                            the charge breaks the air resistance in the space between the two coils
+                                            (known as the spark gap).</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="kartra_timeline__item">
+                        <span class="circle"></span>
+                        <div>
+                            <div data-component="text">
+                                <div>
+                                    <span style="font-size: 0.75rem;"><span>1913</span>
+                                </div>
+                            </div>
+                            <div>
+                                <div>
+                                    <div>
+                                        <p class="inv-title">Tesla turbine</p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div>
+                                        <p class="description">Inspired by the emergent success of the piston engine
+                                            in automobiles, Tesla decided to develop his own turbine-style engine.
+                                            Also known as the boundary-layer turbine and cohesion-type turbine,
+                                            Tesla’s turbine was distinct in its design. Unlike conventional turbines
+                                            Tesla’s design was bladeless, instead employing smooth discs rotating in
+                                            a chamber to generate movement.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="kartra_timeline__item">
+                        <span class="circle"></span>
+                        <div>
+                            <div data-component="text">
+                                <div>
+                                    <span style="font-size: 0.75rem;"><span>1897</span>
+                                </div>
+                            </div>
+                            <div>
+                                <div>
+                                    <p class="inv-title">Radio</p>
+                                </div>
+                                <div>
+                                    <div>
+                                        <p class="description">In early 1895 Tesla was ready to send a radio signal
+                                            50 miles, from his lab at 33 and 35 South Fifth Avenue in Manhattan, to
+                                            West Point, NY but disaster struck before his ground-breaking test could
+                                            be completed: a building fire destroyed Tesla’s lab, taking his work
+                                            with it. A year later, Marconi took out his first wireless telegram
+                                            patent in England.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="kartra_timeline__item">
+                        <span class="circle"></span>
+                        <div>
+                            <div data-component="text">
+                                <div>
+                                    <span style="font-size: 0.75rem;"><span>1887</span>
+                                </div>
+                            </div>
+                            <div>
+                                <div>
+                                    <p class="inv-title">Induction motor</p>
+                                </div>
+                                <div>
+                                    <div>
+                                        <p class="description">Like so much of Tesla’s work, the Magnifying
+                                            transmitter was an expansion of his Tesla coil technology. Having set up
+                                            a lab in Colorado Springs in 1899, he had the space and resources to
+                                            create the biggest Tesla coil yet. He called this triple coil system the
+                                            magnifying transmitter. It was 52 feet in diameter, generated millions
+                                            of volts of electricity and produced 130-foot-long lightning bolts.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="kartra_timeline__item">
+                        <span class="circle"></span>
+                        <div>
+                            <div data-component="text">
+                                <div>
+                                    <span style="font-size: 0.75rem;"><span>1902</span>
+                                </div>
+                            </div>
+                            <div>
+                                <div>
+                                    <p class="inv-title">Magnifying transmitter</p>
+                                </div>
+                                <div>
+                                    <div>
+                                        <p class="description">Like so much of Tesla’s work, the Magnifying
+                                            transmitter was an expansion of his Tesla coil technology. Having set up
+                                            a lab in Colorado Springs in 1899, he had the space and resources to
+                                            create the biggest Tesla coil yet. He called this triple coil system the
+                                            magnifying transmitter. It was 52 feet in diameter, generated millions
+                                            of volts of electricity and produced 130-foot-long lightning bolts.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="kartra_timeline__item">
+                        <span class="circle"></span>
+                        <div>
+                            <div data-component="text">
+                                <div>
+                                    <span style="font-size: 0.75rem;"><span>1886</span>
+                                </div>
+                            </div>
+                            <div>
+                                <div>
+                                    <p class="inv-title">Alternating current</p>
+                                </div>
+                                <div>
+                                    <div>
+                                        <p class="description">Arguably Tesla’s greatest contribution to humanity
+                                            was his influence on the development of alternating current (AC).
+                                            Perhaps it shouldn’t, strictly speaking, feature in a list of his
+                                            inventions, but there’s no doubt that his technology was instrumental in
+                                            the emergence of AC as the world’s dominant electrical system. </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="kartra_timeline__item">
+                        <span class="circle"></span>
+                        <div>
+                            <div data-component="text">
+                                <div>
+                                    <span style="font-size: 0.75rem;"><span>1878</span>
+                                </div>
+                            </div>
+                            <div>
+                                <div>
+                                    <p class="inv-title">Hydroelectric power</p>
+                                </div>
+                                <div>
+                                    <div>
+                                        <p class="description">One of the most impressive products of Tesla’s
+                                            partnership with George Westinghouse was surely Adams Power Station, the
+                                            world’s first hydroelectric power plant. This innovative powerhouse
+                                            realised a long-held hope that the awesome force of Niagara Falls, one
+                                            of North America’s most spectacular natural wonders, could be harnessed.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="kartra_timeline__item">
+                        <span class="circle"></span>
+                        <div>
+                            <div data-component="text">
+                                <div>
+                                    <span style="font-size: 0.75rem;"><span>1896</span>
+                                </div>
+                            </div>
+                            <div>
+                                <div>
+                                    <p class="inv-title">The shadowgraph</p>
+                                </div>
+                                <div>
+                                    <div>
+                                        <p class="description">Another area of Tesla’s research that was likely
+                                            curtailed by the fire that destroyed his New York lab in 1895 relates to
+                                            the emergence of X-ray technology. Famously, German scientist Wilhelm
+                                            Conrad Röntgen developed the first X-ray on the 8 November of that same
+                                            year, a ground-breaking achievement that earned him the inaugural Nobel
+                                            Prize in 1901.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+
+
+            </div>
+        </div>
+        <div class="up-down">
+            <div>
+                <a class="scroll-down" href="#third-page"><i class="fa fa-arrow-up" aria-hidden="true"></i></a>
+            </div>
+            <div>
+                <a class="scroll-down" href="#front-page"><p>TOP</p></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-dark">
+        <p class="pQuote"><i> I am equally proud of my Serbian origin and my Croatian fatherland.</i><br><span>Nikola
+                Tesla</span></p>
+
+    </section>
+
+
+
+
+    <script src="script/scrtip.js"></script>
+</body>
+
+</html>
